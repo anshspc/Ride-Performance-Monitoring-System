@@ -2,6 +2,14 @@
 
 > **An End-to-End Business Intelligence & Analytical Monitoring Dashboard for 100,000+ Ride Bookings**
 
+<div align="center">
+
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Brightgreen?style=for-the-badge&logo=render&logoColor=white)](https://ride-performance-monitoring-system-1.onrender.com)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+
+</div>
+
 ---
 
 ## 🌟 Overview
@@ -12,22 +20,31 @@ By integrating a robust **SQL + SQLite** data engine, a **Power BI** high-fideli
 
 ---
 
-## 📊 Dashboard Insights & Showcases
+## 📸 Dashboard Showcases
 
-### 🖥️ Main Dashboard Overview
-* **High-Level KPIs:** Monitored total bookings, overall cancellation rates, and peak booking value.
-* **Status Tracking:** Real-time visibility into completed vs. canceled ride states.
+### 🖥️ Streamlit Interactive UI & Power BI Visualizations
 
-### 🏎️ Vehicle Type Performance Analysis
-* **Fleet Breakdown:** Comparison of booking volume, average trip distance, and ratings across Prime, Mini, Auto, and Bike categories.
-* **Operational Profitability:** Pinpointing which vehicle types yield the highest ROI.
+| Main Dashboard Overview | Vehicle Type Performance |
+| :---: | :---: |
+| ![Main Dashboard](Screenshot%202025-03-26%20164037.png) | ![Vehicle Type Analysis](dashboard%20%20_vechicle%20type_analysis%20.png) |
 
-### 💰 Revenue & Payment Auditing
-* **Revenue Ingestion:** Tracked ₹35M in transaction value across cash, card, and digital payment methods.
-* **Dynamic Slicing:** Time-series trends by week, day, and hour to identify peak demand spikes.
+| Revenue & Payments Auditing | Cancellation & Incompletes Diagnosis |
+| :---: | :---: |
+| ![Revenue Analysis](dashboard_Revenue_analysis.png) | ![Cancellation Analysis](dashboard_Cancellation_analysis.png) |
 
-### ❌ Cancellation & Incompletes Diagnosis
-* **Root Cause Analysis:** Dynamic breakdown of customer-initiated vs. driver-initiated cancellations to identify areas for service level improvement.
+| Customer Satisfaction (Ratings) |
+| :---: |
+| ![Rating Analysis](Dashboard_Rating_analysis.png) |
+
+---
+
+## ✨ Key Features & Highlights
+
+* **Total Bookings Monitored:** Ingested and structured `103,024` raw booking transactions.
+* **Revenue Audited:** Tracked over `₹35M` in revenue across multiple payment channels.
+* **Performance Analysis:** Segmented vehicle ratings and booking success rates by vehicle type (Prime Sedan, Mini, Auto, Bike).
+* **Cancellation Insights:** Deep-dive analysis of customer-initiated vs. driver-initiated cancellation patterns.
+* **Dynamic Slicers:** Interactive multi-dimensional filtering across booking status, vehicle type, and location.
 
 ---
 
@@ -45,37 +62,35 @@ By integrating a robust **SQL + SQLite** data engine, a **Power BI** high-fideli
 ## 📂 Project Structure
 
 ```text
+├── .streamlit/
+│   └── config.toml                   # Headless deployment settings
 ├── Ride_Performance_Project.pbix     # High-fidelity Power BI report
 ├── ride_performance.db               # Pre-populated SQLite database
 ├── ride_performance_dataset.xlsx     # Core raw dataset (100k+ records)
 ├── ride_performance_project.sql      # Database extraction SQL queries
 ├── app.py                            # Streamlit web application
 ├── init_db.py                        # Database initialization & ETL script
-├── README.md                         # Detailed project documentation
-└── [Screenshots]                     # High-res exports of dashboard modules
+├── requirements.txt                  # Python dependencies
+└── README.md                         # Detailed project documentation
 ```
 
 ---
 
 ## 🚀 Quick Start Guide
 
-### 1. Prerequisites
-* Python 3.10 or higher
-* Pip (Python package manager)
-
-### 2. Installation
+### 1. Installation
 Install the required analytical and visualization dependencies:
 ```bash
-pip install streamlit pandas openpyxl plotly pillow
+pip install -r requirements.txt
 ```
 
-### 3. Database Initialization (ETL Pipeline)
+### 2. Database Initialization (ETL Pipeline)
 To rebuild the SQLite database from the raw Excel spreadsheet and execute standard SQL queries:
 ```bash
 python3 init_db.py
 ```
 
-### 4. Launch the Interactive Dashboard
+### 3. Launch the Interactive Dashboard Locally
 Start the Streamlit development server locally:
 ```bash
 streamlit run app.py
@@ -85,9 +100,15 @@ The interface will automatically load at `http://localhost:8501`.
 ---
 
 ## 💡 Key Strategic Takeaways
-* **Cancellation Inefficiencies:** Identified that customer cancellations peak due to driver arrival delays, suggesting a need for tighter dispatch routing rules.
-* **Fleet Deployment:** Reallocating auto and bike resources to high-volume zones during morning rush hours can boost ride conversions by up to 15%.
-* **Satisfaction Optimization:** Correlated ratings drops to longer customer turnaround times (C-TAT), confirming that wait time is the primary driver of negative reviews.
+
+> [!NOTE]
+> **Cancellation Inefficiencies:** Identified that customer cancellations peak due to driver arrival delays, suggesting a need for tighter dispatch routing rules.
+
+> [!TIP]
+> **Fleet Deployment:** Reallocating auto and bike resources to high-volume zones during morning rush hours can boost ride conversions by up to 15%.
+
+> [!IMPORTANT]
+> **Satisfaction Optimization:** Correlated ratings drops to longer customer turnaround times (C-TAT), confirming that wait time is the primary driver of negative reviews.
 
 ---
 
